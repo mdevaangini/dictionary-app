@@ -1,0 +1,131 @@
+:root {
+  --border-light: rgb(228, 228, 231);
+  --text-light: rgb(113, 113, 122);
+}
+
+body {
+  font-family: "Geist Variable";
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.dictionary {
+  margin: 0 auto;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  row-gap: 16px;
+}
+
+.dictionary__heading {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+}
+
+.form__input {
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  flex: 1;
+  padding: 8px 12px;
+}
+
+.form__button {
+  border-radius: 6px;
+  color: white;
+  background-color: black;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dictionary__list {
+  display: grid;
+  row-gap: 16px;
+}
+
+.card {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card__heading {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.card__play-audio {
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__sub-heading {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.card__meanings {
+  display: grid;
+  row-gap: 14px;
+}
+
+.meaning__heading {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.meaning__list li {
+  list-style: disc;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.dictionary__loading {
+  text-align: center;
+}
+
+.dictionary__error {
+  text-align: center;
+}
+
+.audio__loader {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
