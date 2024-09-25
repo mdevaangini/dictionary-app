@@ -22,7 +22,7 @@ export function DictionaryCard({ response }) {
             onClick={playAudio}
           >
             {isAudioLoading ? (
-              <ImSpinner2 className="audio__loader" fontSize={18} />
+              <ImSpinner2 className="loader" fontSize={18} />
             ) : (
               <HiOutlineSpeakerWave />
             )}

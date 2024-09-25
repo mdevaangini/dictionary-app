@@ -1,12 +1,7 @@
 import "./App.css";
 import { DictionaryCard } from "./components/dictionary-card";
 import { useFetchDictionaryData } from "./hooks/use-fetch-dictionary-data";
-
-// browsers (chome, firefox, safari etc), servers (NodeJS, Bun.JS)
-//
-// browsers api
-// -> DOM api -> getElementById, createElement
-// -> URL, URLSearchParams, fetch // adopt
+import { ImSpinner2 } from "react-icons/im";
 
 function App() {
   const { fetchData, response, loading } = useFetchDictionaryData();
@@ -33,11 +28,17 @@ function App() {
           name="input"
           placeholder="Enter a word..."
         />
-        <button className="form__button" type="submit">
-          Search
+        <button className={"form__button"} type="submit">
+          {loading ? (
+            <span className="form__loader-wrapper">
+              <ImSpinner2 className="loader" />
+              <span>Searching...</span>
+            </span>
+          ) : (
+            <span>Search</span>
+          )}
         </button>
       </form>
-      {loading && <p className="dictionary__loading">Loading...</p>}
       {errorData && <p className="dictionary__error">{errorData.title}</p>}
       <main className="dictionary__list">
         {successData?.map((item, index) => {
